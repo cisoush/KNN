@@ -1,29 +1,24 @@
 CC = gcc
-
-CFLAGS = -Wall -Wextra -std=c89
-
+CFLAGS = -W -Wall -pedantic -std=c89 -O2
 LIBS = -lMLV -lm
 
-OBJETS = main.o interface.o point.o donnees.o
+all : projet
 
-EXEC = projet
+projet : main.o interface.o point.o donnees.o
+    $(CC) $(CFLAGS) -o projet main.o interface.o point.o donnees.o $(LIBS)
 
-all: $(EXEC)
+main.o : main.c interface.h
+    $(CC) $(CFLAGS) -c main.c -o main.o
 
-$(EXEC): $(OBJETS)
-	$(CC) $(CFLAGS) $(OBJETS) -o $(EXEC) $(LIBS)
+interface.o : interface.c interface.h point.h donnees.h
+    $(CC) $(CFLAGS) -c interface.c -o interface.o
 
-main.o: main.c interface.h
-	$(CC) $(CFLAGS) -c main.c
+point.o : point.c point.h
+    $(CC) $(CFLAGS) -c point.c -o point.o
 
-interface.o: interface.c interface.h point.h donnees.h
-	$(CC) $(CFLAGS) -c interface.c
+donnees.o : donnees.c donnees.h point.h
+    $(CC) $(CFLAGS) -c donnees.c -o donnees.o
 
-point.o: point.c point.h
-	$(CC) $(CFLAGS) -c point.c
+clean :
+    rm -rf *.o *~ projet
 
-donnees.o: donnees.c donnees.h point.h
-	$(CC) $(CFLAGS) -c donnees.c
-
-clean:
-	rm -f *.o $(EXEC)
