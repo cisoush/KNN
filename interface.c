@@ -4,8 +4,6 @@
 #include <MLV/MLV_all.h>
 
 #include "interface.h"
-#include "donnees.h"
-#include "point.h"
 
 void initialiser_boutons(Bouton boutons[]) {
 
