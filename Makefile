@@ -5,20 +5,19 @@ LIBS = -lMLV -lm
 all : projet
 
 projet : main.o interface.o point.o donnees.o
-    $(CC) $(CFLAGS) -o projet main.o interface.o point.o donnees.o $(LIBS)
+	$(CC) $(CFLAGS) -o projet main.o interface.o point.o donnees.o $(LIBS)
 
-main.o : main.c interface.h
-    $(CC) $(CFLAGS) -c main.c -o main.o
+main.o : main.c interface.h donnees.o
+	$(CC) $(CFLAGS) -c main.c -o main.o
 
-interface.o : interface.c interface.h point.h donnees.h
-    $(CC) $(CFLAGS) -c interface.c -o interface.o
+interface.o : interface.c interface.h point.h donnees.o
+	$(CC) $(CFLAGS) -c interface.c -o interface.o
 
 point.o : point.c point.h
-    $(CC) $(CFLAGS) -c point.c -o point.o
+	$(CC) $(CFLAGS) -c point.c -o point.o
 
 donnees.o : donnees.c donnees.h point.h
-    $(CC) $(CFLAGS) -c donnees.c -o donnees.o
+	$(CC) $(CFLAGS) -c donnees.c -o donnees.o
 
 clean :
-    rm -rf *.o *~ projet
-
+	rm -rf *.o *~ projet
