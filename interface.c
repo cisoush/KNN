@@ -348,7 +348,6 @@ int interface_lancer() {
 	continuer = 0;
       }
     }
-    printf("classe : %d\classe structure: %d", classe_actuelle, p.classe)
 
     MLV_free_window();
 
