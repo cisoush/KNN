@@ -1,6 +1,8 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
 
+#include "donnees.h"
+#include "point.h"
 
 
 #define LARGEUR_FENETRE 1200
