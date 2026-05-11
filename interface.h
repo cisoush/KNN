@@ -35,8 +35,8 @@ typedef struct {
 
 void initialiser_boutons(Bouton boutons[]);
 static void dessiner_interface(Bouton boutons[], int k, Donnees d);
-static void dessiner_zone_knn(void);
-static void dessiner_menu(void);
+static void dessiner_zone_knn();
+static void dessiner_menu();
 static void dessiner_bouton(Bouton bouton);
 static void dessiner_bouton_k(Bouton bouton, int k);
 static int clic_dans_bouton(Bouton bouton, int x, int y);
