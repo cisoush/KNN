@@ -79,7 +79,7 @@ void dessiner_interface(Bouton boutons[], int k, Donnees d) {
   }
 }
 
-void dessiner_zone_knn(void) {
+void dessiner_zone_knn() {
 
   MLV_draw_filled_rectangle(
 			    40,
@@ -115,7 +115,7 @@ int clic_dans_zone_knn(int x,int y) {
   return 0;
 }
 
-void dessiner_menu(void) {
+void dessiner_menu() {
 
   int largeur_texte;
   int hauteur_texte;
