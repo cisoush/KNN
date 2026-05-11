@@ -2,7 +2,7 @@
 #include "donnees.h"
 #include "point.h"
 
-int main(void) {
+int main() {
 
     interface_lancer();
 
