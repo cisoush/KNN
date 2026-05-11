@@ -79,7 +79,7 @@ void dessiner_interface(Bouton boutons[], int k, Donnees d) {
   }
 }
 
-void dessiner_zone_knn() {
+void dessiner_zone_knn(void) {
 
   MLV_draw_filled_rectangle(
 			    40,
@@ -98,7 +98,7 @@ void dessiner_zone_knn() {
 		     );
 }
 
-int clic_dans_zone_knn(int x, int y) {
+int clic_dans_zone_knn(int x,int y) {
 
   if (
       x >= 40
@@ -115,7 +115,7 @@ int clic_dans_zone_knn(int x, int y) {
   return 0;
 }
 
-void dessiner_menu() {
+void dessiner_menu(void) {
 
   int largeur_texte;
   int hauteur_texte;
@@ -348,6 +348,7 @@ int interface_lancer() {
 	continuer = 0;
       }
     }
+    printf("classe : %d\classe structure: %d", classe_actuelle, p.classe)
 
     MLV_free_window();
 
